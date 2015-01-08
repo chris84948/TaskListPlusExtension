@@ -1,0 +1,15 @@
+﻿// Guids.cs
+// MUST match guids.h
+using System;
+
+namespace Company.TaskListPlus
+{
+    static class GuidList
+    {
+        public const string guidTaskListPlusPkgString = "f33aea1d-3540-449a-97ac-12dc5b632a3a";
+        public const string guidTaskListPlusCmdSetString = "3f88f9ff-a81d-471f-956a-df2cadc50376";
+        public const string guidToolWindowPersistanceString = "b62e1e72-eb31-4ed2-a6a9-67faa58dfe6c";
+
+        public static readonly Guid guidTaskListPlusCmdSet = new Guid(guidTaskListPlusCmdSetString);
+    };
+}

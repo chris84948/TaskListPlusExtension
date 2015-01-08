@@ -1,0 +1,36 @@
+﻿using System;
+using System.Reflection;
+using System.Resources;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+[assembly: AssemblyTitle("TaskListPlus")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("Company")]
+[assembly: AssemblyProduct("TaskListPlus")]
+[assembly: AssemblyCopyright("")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]   
+[assembly: ComVisible(false)]     
+[assembly: CLSCompliant(false)]
+[assembly: NeutralResourcesLanguage("en-US")]
+
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.0.0")]
+[assembly: AssemblyFileVersion("1.0.0.0")]
+
+[assembly: InternalsVisibleTo("TaskListPlus_IntegrationTests, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c155c3d9482faf3bc46925245c27b1901386cf667bbd1e592f75d2b07959025dadd6f2808d37b71bff097fb90f3f55bb891bd68d45070d89158fc7a7d3dab3879e404ebe776a05ab0b3ce26a204215c710d692242578f079a74a8f65e65e7b442c18e47b4753a8030716fb52fdb6dd3705b762cd3c3c309990453e76175e7aeb")]
+[assembly: InternalsVisibleTo("TaskListPlus_UnitTests, PublicKey=0024000004800000940000000602000000240000525341310004000001000100c155c3d9482faf3bc46925245c27b1901386cf667bbd1e592f75d2b07959025dadd6f2808d37b71bff097fb90f3f55bb891bd68d45070d89158fc7a7d3dab3879e404ebe776a05ab0b3ce26a204215c710d692242578f079a74a8f65e65e7b442c18e47b4753a8030716fb52fdb6dd3705b762cd3c3c309990453e76175e7aeb")]
