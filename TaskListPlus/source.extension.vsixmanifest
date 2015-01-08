@@ -3,8 +3,8 @@
   <Identifier Id="8a76dea0-8591-4668-abc5-c7dacc31369d">
     <Name>TaskListPlus</Name>
     <Author>chrisbjohnson</Author>
-    <Version>1.0</Version>
-    <Description xml:space="preserve">Task List but with filters.
+    <Version>1.1</Version>
+    <Description xml:space="preserve">Task List With Token And File Filters.
 
 Now you can view tasks for your 
 solution, project or individual class.

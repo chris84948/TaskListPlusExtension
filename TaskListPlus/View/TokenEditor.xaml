@@ -48,7 +48,7 @@
                   Visibility="{Binding Path=TokenInvalid,
                                        Converter={StaticResource BoolToVis}}">
                 <Path.ToolTip>
-                    <ToolTip Content="Tokens can only contain a-Z 0-9 __ $ ( )"
+                    <ToolTip Content="Tokens can only contain a-Z, 0-9 or underscore(_)"
                              FontFamily="Segoe UI"
                              FontSize="14" />
                 </Path.ToolTip>

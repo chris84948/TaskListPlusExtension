@@ -83,7 +83,7 @@ namespace chrisbjohnson.TaskListPlus
                 try
                 {
                     // Only show comment task items
-                    if (taskItem.Category.Equals("Comment"))
+                    if (taskItem.Category.Equals("Comment", StringComparison.CurrentCultureIgnoreCase))
                     {
                         TaskCollection.Add(new TaskListItemVM(taskItem));
                     }
@@ -102,7 +102,7 @@ namespace chrisbjohnson.TaskListPlus
         {
             for (int i = TaskCollection.Count - 1; i >= 0; i--)
             {
-                if (TaskCollection[i].FullFilename.Equals(GetCurrentFile()))
+                if (TaskCollection[i].FullFilename.Equals(GetCurrentFile(), StringComparison.CurrentCultureIgnoreCase))
                     _taskCollection.RemoveAt(i);
             }
         }
@@ -157,7 +157,7 @@ namespace chrisbjohnson.TaskListPlus
             foreach (TaskListItemVM taskItem in TaskCollection)
             {
                 // First check the token to look for a match ("ALL" is a special case, with an obvious use)
-                if (token.Equals("ALL") || taskItem.Token.Equals(token))
+                if (token.Equals("ALL") || taskItem.Token.Equals(token, StringComparison.CurrentCultureIgnoreCase))
                 {
                     // Now check the scope option
                     // Solution will just add the item - it doesn't filter at all
@@ -175,7 +175,7 @@ namespace chrisbjohnson.TaskListPlus
                     // Class looks for task items matching only the class open in the editor
                     else if (scope == (int)TaskListControlVM.taskScope.Class)
                     {
-                        if (currentFile.Equals(taskItem.FullFilename))
+                        if (currentFile.Equals(taskItem.FullFilename, StringComparison.CurrentCultureIgnoreCase))
                             tempFilteredTaskCollection.Add(taskItem);
                     }
                 }

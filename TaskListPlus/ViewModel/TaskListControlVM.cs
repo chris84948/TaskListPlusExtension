@@ -31,7 +31,7 @@ namespace chrisbjohnson.TaskListPlus
         /// Also, the application's task list doesn't update for at least 1 second after changes are made.
         /// </summary>
         private System.Timers.Timer taskUpdateDelayTimer;
-        private const int UPDATE_DELAY = 3000;
+        private const int UPDATE_DELAY = 2000;
 
         /// <summary>
         /// Delay before reading tasks after a new solution opens
@@ -170,7 +170,7 @@ namespace chrisbjohnson.TaskListPlus
             if (SelectedToken == null) return;
 
             // Check to see if the file has changed. If it has, update the variable and call method to refilter
-            if (!openFile.Equals(TaskViewModel.GetCurrentFile()))
+            if (!openFile.Equals(TaskViewModel.GetCurrentFile(), StringComparison.CurrentCultureIgnoreCase))
             {
                 openFile = TaskViewModel.GetCurrentFile();
                 TaskViewModel.CreateFilteredTaskCollection(SelectedToken, SelectedScopeIndex);
@@ -212,7 +212,7 @@ namespace chrisbjohnson.TaskListPlus
         public void RemoveToken()
         {
             // TODO cannot be removed for some reason
-            if (SelectedToken == "TODO" || SelectedToken == "ALL")
+            if (!CanRemoveToken())
             {
                 System.Windows.MessageBox.Show(String.Format("Cannot remove {0} token.", SelectedToken), "TaskListPlus");
                 return;
@@ -235,7 +235,7 @@ namespace chrisbjohnson.TaskListPlus
         /// <returns>True if token can be removed</returns>
         private bool CanRemoveToken()
         {
-            switch (SelectedToken)
+            switch (SelectedToken.ToUpper())
             {
                 case "ALL":
                     return false;
@@ -247,6 +247,9 @@ namespace chrisbjohnson.TaskListPlus
                     return false;
 
                 case "UNDONE":
+                    return false;
+
+                case "UNRESOLVEDMERGECONFLICT":
                     return false;
 
                 default:

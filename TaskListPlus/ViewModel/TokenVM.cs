@@ -150,7 +150,7 @@ namespace chrisbjohnson.TaskListPlus
             for (int i = 0; i < array.Length; i++)
             {
                 String tempString = Regex.Replace(array[i].ToString(), @":\d", "");
-                if (!tempString.Equals(itemToRemove))
+                if (!tempString.Equals(itemToRemove, StringComparison.CurrentCultureIgnoreCase))
                 {
                     // Copy all items that don't equal the item to remove into the new array
                     returnArray[positionCount] = array[i];

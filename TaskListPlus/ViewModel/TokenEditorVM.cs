@@ -13,7 +13,7 @@ namespace chrisbjohnson.TaskListPlus
         private Boolean _tokenValid;
         private Boolean _tokenInvalid;
 
-        private String REGEX_MATCH = @"[^A-Za-z0-9$_()]";
+        private String REGEX_MATCH = @"[^A-Za-z0-9_]";
 
         /// <summary>
         /// Keeps track of the token string
@@ -32,7 +32,7 @@ namespace chrisbjohnson.TaskListPlus
 
         /// <summary>
         /// True when the token is valid
-        /// Must be alphanumerical, or the following special characters _ $ ()
+        /// Must be alphanumerical, or underscore
         /// </summary>
         public Boolean TokenValid
         {

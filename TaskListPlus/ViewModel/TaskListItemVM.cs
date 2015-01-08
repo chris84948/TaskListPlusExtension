@@ -119,9 +119,9 @@ namespace chrisbjohnson.TaskListPlus
         /// <returns>True if the items are completely equals (all properties)</returns>
         public bool Equals(TaskListItemVM item)
         {
-            return this.FullFilename.Equals(item.FullFilename) &&
-                   this.Token.Equals(item.Token) &&
-                   this.Description.Equals(item.Description) &&
+            return this.FullFilename.Equals(item.FullFilename, StringComparison.CurrentCultureIgnoreCase) &&
+                   this.Token.Equals(item.Token, StringComparison.CurrentCultureIgnoreCase) &&
+                   this.Description.Equals(item.Description, StringComparison.CurrentCultureIgnoreCase) &&
                    this.Line == item.Line;
         }
 
@@ -134,7 +134,7 @@ namespace chrisbjohnson.TaskListPlus
         {
             // We're only comparing the full filename and the line number
             // This will give us enough information to know it's the same task object
-            return this.FullFilename.Equals(item.FullFilename) && this.Line == item.Line;
+            return this.FullFilename.Equals(item.FullFilename, StringComparison.CurrentCultureIgnoreCase) && this.Line == item.Line;
         }
 
         /// <summary>
